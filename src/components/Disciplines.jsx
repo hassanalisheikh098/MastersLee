@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { disciplines } from "../data/Disciplines";
-import { fetchPrograms } from "../data/programs";
+import { fetchPrograms } from "../data/Programs";
 import { Clock, MapPin, Star, Calendar, DollarSign, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProgramCard from './ProgramCard';
