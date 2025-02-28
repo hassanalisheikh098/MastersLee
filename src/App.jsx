@@ -10,7 +10,6 @@ import BlogSection from "./components/BlogSection";
 import SocialHighlights from "./components/SocialHighlights";
 import Footer from "./components/Footer";
 import ResultsPage from "./components/ResultsPage";
-import UniversityPage from "./components/Viewmore";
 import BlogPage from "./components/BlogPage"; // Import BlogPage
 import Waves from "./components/Waves"; // Ensure correct path
 import Signin from './components/Signin'; // Import your Signin component
@@ -18,6 +17,8 @@ import Register from './components/Register';// Import your Register component
 import Founder from './components/Founder'; // Import your Founder component
 import "@fontsource/playwrite-in"; // Import font globally
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import UniversityPage from "./components/Viewmore"
+
 
 function Home() {
   return (
