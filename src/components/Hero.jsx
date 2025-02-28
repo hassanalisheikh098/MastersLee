@@ -1,15 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Search, Globe2 } from "lucide-react";
+<<<<<<< HEAD
 import { programs } from "../data/Programs";
+=======
+>>>>>>> 1ce6d02 (Updated vite.config.js and index.html)
 import { useNavigate } from "react-router-dom";
 import Waves from "../components/Waves"; // Ensure correct path
+import { fetchPrograms } from "../data/Programs"; // Import fetchPrograms function
 
 export default function Hero() {
   const [query, setQuery] = useState("");
   const [location, setLocation] = useState("");
   const [filteredTitles, setFilteredTitles] = useState([]);
   const [filteredLocations, setFilteredLocations] = useState([]);
+  const [programs, setPrograms] = useState([]); // State to hold programs data
+  const [loading, setLoading] = useState(true); // Loading state for data fetching
   const navigate = useNavigate();
+
+  // Fetch programs on component mount
+  useEffect(() => {
+    const fetchData = async () => {
+      const programsData = await fetchPrograms();
+      setPrograms(programsData);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
 
   const handleTitleChange = (e) => {
     const value = e.target.value;
@@ -38,6 +54,11 @@ export default function Hero() {
   const handleSearch = () => {
     navigate(`/results?query=${query}&location=${location}`);
   };
+
+  // Show loading state while data is being fetched
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="relative bg-gradient-to-r from-black to-blue-900 pt-32 pb-20 px-4">

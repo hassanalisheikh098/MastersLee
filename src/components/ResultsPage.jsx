@@ -2,15 +2,26 @@
 
 import React from "react";
 import { useLocation, Link } from "react-router-dom";
-import { programs } from "../data/Programs";
+
 import { Clock, MapPin, Star, Calendar, DollarSign, Briefcase } from 'lucide-react';
 import ProgramCard from './ProgramCard';
+import { fetchPrograms } from '../data/programs'; // Import the fetchPrograms function
 
 export default function ResultsPage() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const searchQuery = queryParams.get("query")?.toLowerCase() || "";
   const searchLocation = queryParams.get("location")?.toLowerCase() || "";
+
+  const [programs, setPrograms] = React.useState([]); // State to hold programs
+
+  React.useEffect(() => {
+    const loadPrograms = async () => {
+      const fetchedPrograms = await fetchPrograms(); // Fetch programs
+      setPrograms(fetchedPrograms); // Update state with fetched programs
+    };
+    loadPrograms();
+  }, []); // Empty dependency array to run once on mount
 
   // Filter programs based on location (country)
   const filteredPrograms = programs.filter(

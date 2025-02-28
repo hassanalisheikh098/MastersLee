@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { disciplines } from "../data/Disciplines";
-import { programs } from "../data/Programs"; 
+import { fetchPrograms } from "../data/programs";
 import { Clock, MapPin, Star, Calendar, DollarSign, Briefcase } from "lucide-react";
 import { Link } from "react-router-dom";
 import ProgramCard from './ProgramCard';
 
 export default function Disciplines() {
   const [selectedDiscipline, setSelectedDiscipline] = useState(null);
+  const [programs, setPrograms] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const fetchedPrograms = await fetchPrograms();
+      setPrograms(fetchedPrograms);
+    };
+
+    fetchData();
+  }, []);
 
   // Filter programs based on selected discipline
   const filteredPrograms = programs.filter(

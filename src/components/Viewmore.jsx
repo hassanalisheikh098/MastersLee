@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { programs } from "../data/Programs";
+import { fetchPrograms } from "../data/programs";
 
 export default function UniversityPage() {
   const { id } = useParams();
+  const [programs, setPrograms] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadPrograms = async () => {
+      const fetchedPrograms = await fetchPrograms();
+      setPrograms(fetchedPrograms);
+      setLoading(false);
+    };
+
+    loadPrograms();
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
   const program = programs.find((p) => p.id === parseInt(id));
 
   if (!program) {
     return <div className="text-center text-red-500 text-xl mt-10">Program not found.</div>;
   }
 
-  const price = program.acceptanceRate < 50 ? 10000 : 20000;
+  const price = program.rating < 50 ? 10000 : 20000;
 
   return (
     <div className="min-h-screen bg-gray-100 py-20 flex justify-center items-start">
