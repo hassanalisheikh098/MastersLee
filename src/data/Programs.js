@@ -29,11 +29,9 @@ export const fetchPrograms = async () => {
   }));
 };
 
-// Usage example
-export const programs = await fetchPrograms(); // Fetch real data from Supabase
-
 async function fetchData() {
   const programs = await fetchPrograms();
   console.log(programs);
 }
+
 fetchData();
