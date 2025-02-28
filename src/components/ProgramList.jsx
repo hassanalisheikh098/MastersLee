@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import ProgramCard from './ProgramCard';
-import { fetchPrograms } from '../data/programs';
+import { fetchPrograms } from '../data/Programs';
 
 export default function ProgramList() {
   const [programs, setPrograms] = useState([]);
