@@ -1,11 +1,6 @@
 // This is list which help in the fetching of the featured programs in the home page
 
-<<<<<<< HEAD
-import React from 'react';
-import { programs } from '../data/Programs';
-=======
 import React, { useEffect, useState } from 'react';
->>>>>>> 1ce6d02 (Updated vite.config.js and index.html)
 import ProgramCard from './ProgramCard';
 import { fetchPrograms } from '../data/programs';
 
