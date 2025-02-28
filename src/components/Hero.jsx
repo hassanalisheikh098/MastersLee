@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Search, Globe2 } from "lucide-react";
-<<<<<<< HEAD
-import { programs } from "../data/Programs";
-=======
->>>>>>> 1ce6d02 (Updated vite.config.js and index.html)
 import { useNavigate } from "react-router-dom";
 import Waves from "../components/Waves"; // Ensure correct path
-import { fetchPrograms } from "../data/Programs"; // Import fetchPrograms function
+import { fetchPrograms } from "../data/Programs";
 
 export default function Hero() {
   const [query, setQuery] = useState("");
