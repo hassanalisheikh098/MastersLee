@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchPrograms } from "../data/programs";
+import { fetchPrograms } from "../data/Programs";
 
 export default function UniversityPage() {
   const { id } = useParams();
