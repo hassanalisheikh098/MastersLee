@@ -5,7 +5,7 @@ import { useLocation, Link } from "react-router-dom";
 
 import { Clock, MapPin, Star, Calendar, DollarSign, Briefcase } from 'lucide-react';
 import ProgramCard from './ProgramCard';
-import { fetchPrograms } from '../data/programs'; // Import the fetchPrograms function
+import { fetchPrograms } from '../data/Programs'; // Import the fetchPrograms function
 
 export default function ResultsPage() {
   const location = useLocation();
