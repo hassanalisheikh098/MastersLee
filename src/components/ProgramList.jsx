@@ -1,7 +1,7 @@
 // This is list which help in the fetching of the featured programs in the home page
 
 import React from 'react';
-import { programs } from '../data/programs';
+import { programs } from '../data/Programs';
 import ProgramCard from './ProgramCard';
 
 export default function ProgramList() {
