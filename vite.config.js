@@ -9,8 +9,4 @@ export default defineConfig({
   esbuild: {
     target: 'esnext',
   },
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 3773903 (Initial commit)
