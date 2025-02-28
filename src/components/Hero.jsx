@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Search, Globe2 } from "lucide-react";
-import { programs } from "../data/programs";
+import { programs } from "../data/Programs";
 import { useNavigate } from "react-router-dom";
 import Waves from "../components/Waves"; // Ensure correct path
 
